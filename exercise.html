@@ -18,7 +18,7 @@ $(function(){
 		var name = items[i].Name;
 		var imgURL = items[i].Picture1;
 		var website = items[i].Website;
-		$("#attractions").append('<div>'+items[i].Name+'</div><div><a href = "'+website+'"><img src="'+imgURL+'" height="200" width="200"></div>');
+		$("#attractions").append('<div><table><tr><td align=middle><a href = "'+website+'"><img src="'+imgURL+'"height="400" width="400"></td></tr> <tr><th>'+items[i].Name+'</th></tr> <tr><td>'+items[i].Description+'</td></tr></div><br> </br><br> </br>');
     	    }
 	},
 	error: function() {
