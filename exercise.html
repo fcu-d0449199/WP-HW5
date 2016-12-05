@@ -22,7 +22,8 @@ $(function(){
 		var map = 'http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=';
 		map = map + items[i].Add;
 		map = map + '&z=16&output=embed&t=';
-		$("#attractions").append('<div><center><table><tr><td align=middle><a href = "'+website+'"><img src="'+imgURL+'"height="400" width="400" alt="無圖片可顯示!!"></td></tr> <tr><th align=middle>'+name+'</th></tr> <tr><td align=middle>'+items[i].Description+'</td></tr> <tr><td>電話: '+items[i].Tel+'</td></tr> <tr><td>地址: '+items[i].Add+'</td><tr></table></center></div><br><br><br><br/>');
+		map.src=map;
+		$("#attractions").append('<div><center><table><tr><td align=middle><a href = "'+website+'"><img src="'+imgURL+'"height="400" width="400" alt="無圖片可顯示!!"></td></tr> <tr><th align=middle>'+name+'</th></tr> <tr><td>'+items[i].Description+'</td></tr> <tr><td>電話: '+items[i].Tel+'</td></tr> <tr><td><a href="https://www.google.com.tw/maps/search/'+items[i].Add+'12z/data=!3m1!4b1?hl=zh-TW">地址: '+items[i].Add+'</td></tr></table></center><button id = "'+i+'">顯示位置</button></div><br><br><br><br/>');
     	    }
 	},
 	error: function() {
@@ -32,12 +33,21 @@ $(function(){
 
 });
 
+$(document).ready(function(){
+    	$("button").click(function(){
+		
+    	}); 
+});
+
 </script>
 
 </head>
 <body>
 <div id="attractions">
-<iframe id='maps' src="http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=  &z=16&output=embed&t=" width="650" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
+<center><table border="3"><tr><th><iframe id='maps' src="http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=  &z=16&output=embed&t=" width="650" height="650" frameborder="0" style="border:0" allowfullscreen></iframe></th></tr></table></center>
+<br>
+<br>
+<br/>
 </div>
 </body>
 </html>
