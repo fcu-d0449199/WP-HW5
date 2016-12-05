@@ -18,7 +18,11 @@ $(function(){
 		var name = items[i].Name;
 		var imgURL = items[i].Picture1;
 		var website = items[i].Website;
-		$("#attractions").append('<div><center><table><tr><td align=middle><a href = "'+website+'"><img src="'+imgURL+'"height="400" width="400" alt="無圖片可顯示!!"></td></tr> <tr><th align=middle>'+items[i].Name+'</th></tr> <tr><td align=middle>'+items[i].Description+'</td></tr></table></center></div><br> </br><br> </br>');
+		var map = document.getElementById('maps');
+		var map = 'http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=';
+		map = map + items[i].Add;
+		map = map + '&z=16&output=embed&t=';
+		$("#attractions").append('<div><center><table><tr><td align=middle><a href = "'+website+'"><img src="'+imgURL+'"height="400" width="400" alt="無圖片可顯示!!"></td></tr> <tr><th align=middle>'+name+'</th></tr> <tr><td align=middle>'+items[i].Description+'</td></tr> <tr><td>電話: '+items[i].Tel+'</td></tr> <tr><td>地址: '+items[i].Add+'</td><tr></table></center></div><br><br><br><br/>');
     	    }
 	},
 	error: function() {
@@ -33,6 +37,7 @@ $(function(){
 </head>
 <body>
 <div id="attractions">
+<iframe id='maps' src="http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=  &z=16&output=embed&t=" width="650" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
 </body>
 </html>
